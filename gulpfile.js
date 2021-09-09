@@ -1,4 +1,3 @@
-
 // Создаем пременные, к которым присваиваем
 // установленные пакеты npm
 const gulp = require('gulp');
@@ -27,7 +26,7 @@ gulp.task('server', function () {
     });
     gulp.watch('src/*.html').on('change', browserSync.reload);
     //следи за файлами html если изменились, то перезапускай 
-                                        // обновление страницы
+    // обновление страницы
 });
 
 //2. Компиляция sass. Просто компилирует. Сам не запускается.
@@ -71,60 +70,77 @@ gulp.task('watch', function () {
     // 5. Слежка за файлом html 
     gulp.watch('src/*.html').on('change', gulp.parallel('html'));
     // следи за файлом html      если поменялось, то выполняй задачу html 
-                            //   которая будет описана в пункте 6
+    //   которая будет описана в пункте 6
+    gulp.watch('src/js/**/*.js').on('change', gulp.parallel('scripts'));
+    gulp.watch('src/img/**/*').on('all', gulp.parallel('image'));
+    gulp.watch('src/icons/**/*').on('all', gulp.parallel('icons'));
+    // следи за папками js img icons, если поменялись, то выполняй
+    // задачи ....
 });
-                //  Копирование из crs в папку dist в АНАЛОГИЧНЫЕ ПАПКИ всех файлов, 
-                // которые
-                // понадобятся при просмотре страницы, а именно файлов html, 
-                //  всех файлов с форматом js, шрифтов, картинок,
-                //  css копировать не надо, поскольку эта операция делается в 
-                // пункте 2, а именно в gulp.task('styles', function () {  
+//  Копирование из crs в папку dist в АНАЛОГИЧНЫЕ ПАПКИ всех файлов, 
+// которые
+// понадобятся при просмотре страницы, а именно файлов html, 
+//  всех файлов с форматом js, шрифтов, картинок,
+//  css копировать не надо, поскольку эта операция делается в 
+// пункте 2, а именно в gulp.task('styles', function () {  
 // 6. Сжатие и перенос файла html из папки src в папку dist
-gulp.task('html', function() {
+gulp.task('html', function () {
     return gulp.src('src/*.html')
-    // получаем любой * файл с расширением html, 
-    // который находится в src
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    // сжимаем файл html
-    .pipe(gulp.dest('dist/'));
+        // получаем любой * файл с расширением html, 
+        // который находится в src
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        // сжимаем файл html
+        .pipe(gulp.dest('dist/'));
     // КОПИРУЕМ сжатый файл  html в папку dist
     // поставить знак /  , чтобы помещалось в папку
 });
 
 
 // Копирование фалов js
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return gulp.src('src/js/**/*.js')
-    // получаем любой * файл js, 
-    // ИЗ ЛЮБОЙ ПАПКИ /**/ 
-    .pipe(gulp.dest('dist/js'));
-    // КОПИРУЕМ сжатый файл  html в папку dist
-    // поставить знак /  , чтобы помещалось в папку
+        // получаем любой * файл js, 
+        // ИЗ ЛЮБОЙ ПАПКИ /**/ 
+        .pipe(gulp.dest('dist/js'))
+        // КОПИРУЕМ сжатый файл  html в папку dist
+        // поставить знак /  , чтобы помещалось в папку
+        .pipe(browserSync.stream());
+        // обновление страницы, чтобы после изменения
+        // файла скрипта не нужно было самому обновлять
 });
 
 // Копирование шрифтов по аналогии
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
     return gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe(browserSync.stream());
+        // обновление страницы, чтобы после изменения
+        // файла скрипта не нужно было самому обновлять
 });
 
 // Копирование icons по аналогии
-gulp.task('icons', function() {
+gulp.task('icons', function () {
     return gulp.src('src/icons/**/*')
-    .pipe(imagemin()) 
-    .pipe(gulp.dest('dist/icons'));    
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/icons'))
+        .pipe(browserSync.stream());
+        // обновление страницы, чтобы после изменения
+        // файла скрипта не нужно было самому обновлять
 });
 
 // Копирование image по аналогии
 
-gulp.task('image', function() {
+gulp.task('image', function () {
     return gulp.src('src/img/**/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('dist/img/'));    
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img/'))
+        .pipe(browserSync.stream());
+        // обновление страницы, чтобы после изменения
+        // файла скрипта не нужно было самому обновлять
 });
 
 // 4. Задача по запуску всех задач одновременно (паралельно).
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'html', 'fonts', 'icons', 'image'));
 // Первый параметр - по умолчанию
-
-
