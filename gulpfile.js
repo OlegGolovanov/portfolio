@@ -1,7 +1,7 @@
 // Создаем пременные, к которым присваиваем
 // установленные пакеты npm
 const gulp = require('gulp');
-const browserSync = require('browser-sync');
+const browserSync = require('browser-sync').create();
 //Удаляем метод .creat()
 const rename = require("gulp-rename");
 const autoprefixer = require('gulp-autoprefixer');
