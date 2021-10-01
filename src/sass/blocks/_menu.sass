@@ -1,4 +1,5 @@
 .menu
+    padding: 140px 94px 51px 40px
     width: 345px
     height: 100vh
     background: #FFA501
@@ -7,6 +8,30 @@
     transition: 0.7s all
     left: -100%
     z-index: 2
+    &__list
+        font-family: Poppins
+        font-weight: bold
+        font-size: 24px
+        line-height: 36px
+        color: #FFFFFF
+        list-style: none
+        li
+            position: relative
+            &::after
+                content: ""
+                display: block
+                position: absolute
+                left: -30px
+                top: 11px
+                width: 15px
+                height: 15px
+                border: 1px solid #000000
+                box-sizing: border-box
+                border-radius: 100%
+            a
+                text-decoration: none
+                user-select: none               
+                color: #FFFFFF
     &__active
         left: 0
-        
+    

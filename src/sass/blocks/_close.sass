@@ -1,0 +1,25 @@
+.close
+    position: absolute
+    &::before
+        content: ""
+        position: absolute
+        display: block
+        width: 29px
+        height: 2px
+        background-color: #000
+        top: 20px
+        transform: translateY(5px) rotate(45deg)
+    &:after
+        content: ""
+        position: absolute
+        display: block
+        width: 29px
+        height: 2px
+        background-color: #000
+        top: 20px
+        transform: translateY(5px) rotate(-45deg)
+    &_menu
+        width: 29px
+        height: 41px
+        top: 24px
+        right: 25px
