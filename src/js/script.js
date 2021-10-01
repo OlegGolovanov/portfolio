@@ -1,6 +1,8 @@
 "use strict";
 
 const hamburgerLine = document.querySelectorAll(".hamburger__line");
+const promo = document.querySelector(".promo");
+const container = document.querySelector(".container");
 
 document.addEventListener("click", (e) => {
     function activeHamburger(selector) {
@@ -15,13 +17,10 @@ document.addEventListener("click", (e) => {
     activeHamburger(".hamburger");
     activeHamburger(".hamburger__line");
 
-    if (!e.target.matches(".hamburger") 
-    && !e.target.matches(".hamburger__line")) {
+    if (e.target === promo || e.target === container) {
         hamburgerLine.forEach(item => {
             item.classList.remove("hamburger__line_active");
         });
         document.querySelector(".menu").classList.remove("menu__active");
-
-
     }
 });
