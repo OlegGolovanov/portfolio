@@ -5,6 +5,11 @@
 @import "libs/fonts"
 @import "libs/variables"
 @import "libs/mixins"
+.container
+    position: relative
+    width: 1140px
+    margin: 0 auto
+
 @import "blocks/promo"
 @import "blocks/title"
 @import "blocks/button"
@@ -13,9 +18,11 @@
 @import "blocks/close"
 @import "blocks/social-link"
 
-.container
-    position: relative
-    width: 1140px
-    margin: 0 auto
-
-      
+.show
+    visibility: visible 
+    opacity: 0.75
+        
+    
+.hide
+    visibility: hidden
+    
