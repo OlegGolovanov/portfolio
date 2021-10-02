@@ -2,7 +2,7 @@
     padding: 140px 94px 51px 40px
     width: 345px
     height: 100vh
-    background: #FFA501
+    background: $main_color
     position: absolute
     top: 0
     transition: 0.7s all
@@ -28,14 +28,18 @@
                 border: 1px solid #000000
                 box-sizing: border-box
                 border-radius: 100%
+                
             a
                 text-decoration: none
                 user-select: none
                 color: #FFFFFF
+                &:hover
+                    color: black
+                
     &__active
-        left: 0        
-        
-    &__blackout        
+        left: 0
+
+    &__blackout
         position: fixed
         top: 0px
         width: 100%
@@ -44,3 +48,8 @@
         opacity: 0
         background-color: #fff
         z-index: 1
+.show
+    visibility: visible
+    opacity: 0.75
+.hide
+    visibility: hidden

@@ -29,7 +29,7 @@ document.addEventListener("click", (e) => {
     activeHamburger(".hamburger__line");
 
 
-    if (e.target === promo || e.target === container || e.target.matches(".close")) {
+    if (e.target.matches(".close") || e.target.matches(".menu__blackout")) {
         hamburgerLine.forEach(item => {
             item.classList.remove("hamburger__line_active");
         });
