@@ -15,7 +15,10 @@ function hide(selector) {
     document.querySelector(selector).classList.add("hide");
 }
 
+
+
 document.addEventListener("click", (e) => {
+    //----------------------------active menu------------------------------------//
     function activeHamburger(selector) {
         if (e.target && e.target.matches(selector)) {
             hamburgerLine.forEach(item => {
@@ -28,7 +31,7 @@ document.addEventListener("click", (e) => {
     activeHamburger(".hamburger");
     activeHamburger(".hamburger__line");
 
-
+    //----------------------------deactivation menu --------------------------//
     if (e.target.matches(".close") || e.target.matches(".menu__blackout")) {
         hamburgerLine.forEach(item => {
             item.classList.remove("hamburger__line_active");
