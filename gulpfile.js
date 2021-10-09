@@ -38,7 +38,7 @@ gulp.task('styles', function () {
         // Символы *. это поиск каких либо расширений
         // Далее прописываем действия с файлами 
         .pipe(sass({
-            outputStyle: 'compressed'
+            outputStyle: 'expanded'
         }).on('error', sass.logError))
         /* без точек с запятой */
         // Файл стилей будет компилироваться из sass в css. 
@@ -52,9 +52,9 @@ gulp.task('styles', function () {
                        проставляем автопрефиксы */
             cascade: false
         })) /* без точек с запятой */
-        .pipe(cleanCSS({
-            compatibility: 'ie8'
-        })) //сжимаем файл css
+        // .pipe(cleanCSS({
+        //     compatibility: 'ie8'
+        // })) //сжимаем файл css
         .pipe(gulp.dest('dist/css')) /* без точек с запятой */
         // Теперь файл css помещаем в папку в чистовую папку dist
         .pipe(browserSync.stream()); /* точка с запятой */
