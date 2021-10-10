@@ -1,1 +1,43 @@
-// .experience
+.experience
+    display: grid
+    grid-template-columns: 417px 417px
+    column-gap: 143px
+    position: relative
+
+    &__column
+        position: relative
+        display: grid
+        grid-template-rows: 30px repeat(2, 1fr)
+        padding-left: 43px
+        border-left: 2px solid black
+        row-gap: 45px
+        @include disk
+        &::before
+            width: 15px
+            height: 15px
+            top: 15px
+            left: -9px
+            z-index: 4
+    &__wapper
+        display: grid
+        grid-template-columns: 36px 236px
+    &__img
+        position: relative
+        @include disk
+    &__education
+        p
+            margin: 0
+            font-weight: 500
+            font-size: 12px
+            line-height: 18px
+
+            color: #000000
+            span
+                font-family: Poppins
+                font-weight: 700
+                font-size: 14px
+                line-height: 21px
+    &__text
+        font-weight: 500
+        font-size: 12px
+        line-height: 18px

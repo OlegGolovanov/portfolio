@@ -487,15 +487,7 @@ progress {
   font-size: 36px;
   line-height: 60px;
 }
-.title_experience__education {
-  font-size: 20px;
-  line-height: 30px;
-}
-.title_experience__education {
-  font-size: 20px;
-  line-height: 30px;
-}
-.title_experience__work {
+.title_experience__grid {
   font-size: 20px;
   line-height: 30px;
 }
@@ -776,4 +768,74 @@ progress {
 .about-me__skill-img::before {
   left: 0;
   top: 0;
+}
+
+.experience {
+  display: grid;
+  grid-template-columns: 417px 417px;
+  -moz-column-gap: 143px;
+  column-gap: 143px;
+  position: relative;
+}
+.experience__column {
+  position: relative;
+  display: grid;
+  grid-template-rows: 30px repeat(2, 1fr);
+  padding-left: 43px;
+  border-left: 2px solid black;
+  row-gap: 45px;
+}
+.experience__column::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: -8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background: #FFA501;
+  z-index: -1;
+}
+.experience__column::before {
+  width: 15px;
+  height: 15px;
+  top: 15px;
+  left: -9px;
+  z-index: 4;
+}
+.experience__wapper {
+  display: grid;
+  grid-template-columns: 36px 236px;
+}
+.experience__img {
+  position: relative;
+}
+.experience__img::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: -8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background: #FFA501;
+  z-index: -1;
+}
+.experience__education p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+.experience__education p span {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.experience__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
 }
