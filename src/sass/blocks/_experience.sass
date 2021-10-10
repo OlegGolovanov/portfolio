@@ -1,37 +1,58 @@
-.experience
+.experience-dsc
     display: grid
-    grid-template-columns: 417px 417px
+    grid-template-columns: 417px 417px  
+    grid-template-rows: auto
     column-gap: 143px
     position: relative
 
     &__column
         position: relative
         display: grid
-        grid-template-rows: 30px repeat(2, 1fr)
+        grid-template-rows: 30px minmax(115px, auto) minmax(115px, auto)                                
         padding-left: 43px
-        border-left: 2px solid black
         row-gap: 45px
+        border-left: 1px solid black
         @include disk
         &::before
             width: 15px
             height: 15px
-            top: 15px
-            left: -9px
+            top: -2px
+            left: -8.9px
             z-index: 4
+
+    &__item
+        position: relative
+        
     &__wapper
         display: grid
         grid-template-columns: 36px 236px
+        column-gap: 18px
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            height: 1px
+            width: 45px
+            background-color: #000
+            left: -45px
+            top: 18px
+
     &__img
         position: relative
         @include disk
+        &::before
+            top: auto
+            left: auto
+        img
+            position: relative
+            top: 14px
+            left: 14px
     &__education
         p
             margin: 0
             font-weight: 500
             font-size: 12px
             line-height: 18px
-
-            color: #000000
             span
                 font-family: Poppins
                 font-weight: 700

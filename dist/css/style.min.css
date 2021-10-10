@@ -484,10 +484,11 @@ progress {
   top: -6px;
 }
 .title_experience-h3 {
+  text-align: center;
   font-size: 36px;
   line-height: 60px;
 }
-.title_experience__grid {
+.title_experience-grid {
   font-size: 20px;
   line-height: 30px;
 }
@@ -735,7 +736,7 @@ progress {
 .about-me__skills {
   display: grid;
   grid-template-columns: 260px 260px;
-  grid-template-rows: repeat(2, 116px);
+  grid-template-rows: repeat(2, minmax(116px, auto));
   gap: 20px 50px;
 }
 .about-me__skill {
@@ -770,22 +771,23 @@ progress {
   top: 0;
 }
 
-.experience {
+.experience-dsc {
   display: grid;
   grid-template-columns: 417px 417px;
+  grid-template-rows: auto;
   -moz-column-gap: 143px;
   column-gap: 143px;
   position: relative;
 }
-.experience__column {
+.experience-dsc__column {
   position: relative;
   display: grid;
-  grid-template-rows: 30px repeat(2, 1fr);
+  grid-template-rows: 30px minmax(115px, auto) minmax(115px, auto);
   padding-left: 43px;
-  border-left: 2px solid black;
   row-gap: 45px;
+  border-left: 1px solid black;
 }
-.experience__column::before {
+.experience-dsc__column::before {
   content: "";
   position: absolute;
   left: -14px;
@@ -796,21 +798,36 @@ progress {
   background: #FFA501;
   z-index: -1;
 }
-.experience__column::before {
+.experience-dsc__column::before {
   width: 15px;
   height: 15px;
-  top: 15px;
-  left: -9px;
+  top: -2px;
+  left: -8.9px;
   z-index: 4;
 }
-.experience__wapper {
-  display: grid;
-  grid-template-columns: 36px 236px;
-}
-.experience__img {
+.experience-dsc__item {
   position: relative;
 }
-.experience__img::before {
+.experience-dsc__wapper {
+  display: grid;
+  grid-template-columns: 36px 236px;
+  -moz-column-gap: 18px;
+  column-gap: 18px;
+  position: relative;
+}
+.experience-dsc__wapper::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 45px;
+  background-color: #000;
+  left: -45px;
+  top: 18px;
+}
+.experience-dsc__img {
+  position: relative;
+}
+.experience-dsc__img::before {
   content: "";
   position: absolute;
   left: -14px;
@@ -821,20 +838,28 @@ progress {
   background: #FFA501;
   z-index: -1;
 }
-.experience__education p {
+.experience-dsc__img::before {
+  top: auto;
+  left: auto;
+}
+.experience-dsc__img img {
+  position: relative;
+  top: 14px;
+  left: 14px;
+}
+.experience-dsc__education p {
   margin: 0;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #000000;
 }
-.experience__education p span {
+.experience-dsc__education p span {
   font-family: Poppins;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
 }
-.experience__text {
+.experience-dsc__text {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
