@@ -469,17 +469,6 @@ progress {
   text-align: center;
 }
 .title_experience-h2::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: -8px;
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  background: #FFA501;
-  z-index: -1;
-}
-.title_experience-h2::before {
   left: 48.4%;
   top: -6px;
 }
@@ -504,6 +493,10 @@ progress {
 .title_experience-grid {
   font-size: 20px;
   line-height: 30px;
+}
+.title_work-h3::before {
+  top: auto;
+  left: auto;
 }
 
 .button {
@@ -882,4 +875,35 @@ progress {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
+}
+
+.work {
+  padding-top: 126px;
+}
+.work__technologies {
+  display: grid;
+  grid-template: repeat(2, minmax(270px, auto))/repeat(4, minmax(270px, auto));
+  gap: 13px 10px;
+}
+.work__technology {
+  padding: 30px 29px 25px 30px;
+}
+.work__title-technology {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
+.work__dsc {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+.work__level {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 350px;
+  height: 70px;
 }
