@@ -911,6 +911,7 @@ progress {
   display: grid;
   grid-template: repeat(2, 70px)/repeat(3, 350px);
   gap: 45px 38px;
+  padding-top: 120px;
 }
 .work__levels-wapper {
   width: 100%;
