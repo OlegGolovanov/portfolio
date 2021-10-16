@@ -52,16 +52,24 @@ document.addEventListener("click", (e) => {
 // ------------------- Уровень навыков-------------------//
 
 input.forEach(item => {
-    item.value = "100";
+    item.value = "85";
     scale.forEach(i => {
         i.style.width = `${item.value}%`;
-        form.forEach(l => {
-            l.addEventListener("submit", (e) => {
-                e.preventDefault();
-                i.style.width = `${item.value}%`;
-                console.log(item.value);
+    });
+});
+
+
+form.forEach(item => {
+    item.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if(e.target && )
+        input.forEach(l => {           
+            scale.forEach(i => {
+                i.style.width = `${l.value}%`;
             });
         });
-    });
 
+        // i.style.width = `${item.value}%`;
+        // console.log(item.value);
+    });
 });
