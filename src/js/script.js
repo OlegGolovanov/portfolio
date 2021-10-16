@@ -3,7 +3,12 @@
 const hamburgerLine = document.querySelectorAll(".hamburger__line"),
     promo = document.querySelector(".promo"),
     hamburger = document.querySelector(".hamburger"),
-    container = document.querySelector(".container");
+    container = document.querySelector(".container"),
+    form = document.querySelectorAll(".work__level"),
+    input = document.querySelectorAll(".input"),
+    scale = document.querySelectorAll(".work__scale");
+
+
 
 function show(selector) {
     document.querySelector(selector).classList.remove("hide");
@@ -39,4 +44,19 @@ document.addEventListener("click", (e) => {
         document.querySelector(".menu").classList.remove("menu__active");
         hide(".menu__blackout");
     }
+});
+
+// --------------------------Уровень навыков---------------//
+input.forEach(function (item, i) {
+    item.value = "85";
+    scale[i].style.width = `${item.value}%`
+});
+
+form.forEach(function (item, i) {
+    item.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (e.target && e.target === item) {
+            scale[i].style.width = `${input[i].value}%`;
+        }
+    });
 });

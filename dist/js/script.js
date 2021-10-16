@@ -4,11 +4,9 @@ const hamburgerLine = document.querySelectorAll(".hamburger__line"),
     promo = document.querySelector(".promo"),
     hamburger = document.querySelector(".hamburger"),
     container = document.querySelector(".container"),
+    form = document.querySelectorAll(".work__level"),
     input = document.querySelectorAll(".input"),
-    scale = document.querySelectorAll(".work__scale"),
-    form = document.querySelectorAll(".work__level");
-
-
+    scale = document.querySelectorAll(".work__scale");
 
 
 
@@ -48,28 +46,17 @@ document.addEventListener("click", (e) => {
     }
 });
 
-
-// ------------------- Уровень навыков-------------------//
-
-input.forEach(item => {
+// --------------------------Уровень навыков---------------//
+input.forEach(function (item, i) {
     item.value = "85";
-    scale.forEach(i => {
-        i.style.width = `${item.value}%`;
-    });
+    scale[i].style.width = `${item.value}%`
 });
 
-
-form.forEach(item => {
-    item.addEventListener("submit", (e) => {
+form.forEach(function (item, i) {
+    item.addEventListener('submit', (e) => {
         e.preventDefault();
-        if(e.target && )
-        input.forEach(l => {           
-            scale.forEach(i => {
-                i.style.width = `${l.value}%`;
-            });
-        });
-
-        // i.style.width = `${item.value}%`;
-        // console.log(item.value);
+        if (e.target && e.target === item) {
+            scale[i].style.width = `${input[i].value}%`;
+        }
     });
 });

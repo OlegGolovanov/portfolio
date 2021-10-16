@@ -494,9 +494,16 @@ progress {
   font-size: 20px;
   line-height: 30px;
 }
+.title_work-h3 {
+  padding-left: 14px;
+  padding-top: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
 .title_work-h3::before {
-  top: auto;
-  left: auto;
+  top: 0px;
+  left: 0px;
 }
 
 .button {
@@ -932,7 +939,7 @@ progress {
   border-radius: 4px;
 }
 .work__scale {
-  width: 0%;
   height: 14px;
   background-color: #FFA501;
+  border-radius: 4px;
 }
