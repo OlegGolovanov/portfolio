@@ -56,6 +56,9 @@ form.forEach(function (item, i) {
     item.addEventListener('submit', (e) => {
         e.preventDefault();
         if (e.target && e.target === item) {
+            if(input[i].value > 100) {
+                input[i].value = "100"
+            }
             scale[i].style.width = `${input[i].value}%`;
         }
     });
