@@ -18,21 +18,39 @@
     grid-row: 2/2
 
 .topmenu
+    padding: 100px 0 100px 0
     display: flex
     justify-content: space-between
     margin: 0 auto
     width: 400px
-    height: 150px
+    height: 30px
     list-style: none
+
 .submenu
+    // 3 вариант. Плавно проявляется
+    transition: 1s all
     position: absolute
     list-style: none
-    display: none
+    // 1 вариант.Резко появляется
+    // display: none
+    // 2 (3) вариант. Также резко появляется
+    // visibility: hidden 
+    // 3 вариант. Плавно проявляется
+    // opacity: 0 
+    // 4 вариант
+    transform: scaleY(0)
+    transform-origin: 0 0
 
-li:hover .submenu
-    display: block
 // при наведении на тэг li, в котором есть
 // блок .submenu, к этому блоку присваевается
 // класс display: block
-
-    // color: #000
+ul li:hover .submenu
+    // 1 вариант.Резко появляется
+    // display: block 
+    // 2 (3) вариант.Также резко появляется
+    // visibility: visible 
+    // 3 вариант. Плавно проявляется
+    opacity: 1
+    // 4 вариант
+    transform: scaleY(1)
+    
