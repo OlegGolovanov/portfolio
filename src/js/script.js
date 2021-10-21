@@ -3,10 +3,8 @@
 const hamburgerLine = document.querySelectorAll(".hamburger__line"),
     promo = document.querySelector(".promo"),
     hamburger = document.querySelector(".hamburger"),
-    container = document.querySelector(".container"),
-    form = document.querySelectorAll(".work__level"),
-    input = document.querySelectorAll(".input"),
-    scale = document.querySelectorAll(".work__scale");
+    container = document.querySelector(".container");
+
 
 
 
@@ -47,6 +45,10 @@ document.addEventListener("click", (e) => {
 });
 
 // --------------------------Уровень навыков---------------//
+const form = document.querySelectorAll(".work__level"),
+      input = document.querySelectorAll(".input"),
+      scale = document.querySelectorAll(".work__scale");
+
 input.forEach(function (item, i) {
     item.value = "85";
     scale[i].style.width = `${item.value}%`
@@ -56,10 +58,29 @@ form.forEach(function (item, i) {
     item.addEventListener('submit', (e) => {
         e.preventDefault();
         if (e.target && e.target === item) {
-            if(input[i].value > 100) {
+            if (input[i].value > 100) {
                 input[i].value = "100"
             }
             scale[i].style.width = `${input[i].value}%`;
         }
     });
 });
+
+
+const body = document.body;
+
+// Определение, заходит ли с мобильного устройства
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // код для мобильных устройств
+    document.body.classList.remove("mouse");
+    document.body.classList.add("mobile");
+    // scale.forEach(item => {
+        
+    // })
+    
+} else {
+    // код для обычных устройств
+    document.body.classList.add("mouse");
+    document.body.classList.remove("mobile");
+
+}

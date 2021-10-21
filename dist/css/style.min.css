@@ -979,7 +979,7 @@ progress {
   list-style: none;
 }
 
-.submenu {
+.mouse .submenu {
   transition: 1s all;
   position: absolute;
   list-style: none;
@@ -987,7 +987,11 @@ progress {
   transform-origin: 0 0;
 }
 
-ul li:hover .submenu {
+.mouse ul li:hover .submenu {
   opacity: 1;
   transform: scaleY(1);
+}
+
+.mobile .submenu {
+  display: none;
 }

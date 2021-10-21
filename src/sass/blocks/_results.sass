@@ -26,7 +26,7 @@
     height: 30px
     list-style: none
 
-.submenu
+.mouse .submenu
     // 3 вариант. Плавно проявляется
     transition: 1s all
     position: absolute
@@ -41,10 +41,13 @@
     transform: scaleY(0)
     transform-origin: 0 0
 
+
+
+
 // при наведении на тэг li, в котором есть
 // блок .submenu, к этому блоку присваевается
 // класс display: block
-ul li:hover .submenu
+.mouse ul li:hover .submenu
     // 1 вариант.Резко появляется
     // display: block 
     // 2 (3) вариант.Также резко появляется
@@ -53,4 +56,7 @@ ul li:hover .submenu
     opacity: 1
     // 4 вариант
     transform: scaleY(1)
+
+.mobile .submenu
+    display: none
     
