@@ -968,39 +968,3 @@ progress {
   grid-column: 2/4;
   grid-row: 2/2;
 }
-
-.topmenu {
-  padding: 200px 0 200px 0;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 400px;
-  height: 30px;
-  list-style: none;
-}
-
-.submenu {
-  transition: 1s all;
-  position: absolute;
-  list-style: none;
-  transform: scaleY(0);
-  transform-origin: 0 0;
-}
-
-.sub-submenu {
-  transition: 1s all;
-  position: absolute;
-  list-style: none;
-  transform: scaleY(0);
-  transform-origin: 0 0;
-}
-
-.triangle {
-  margin-left: 30px;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 15px solid #79849B;
-}
