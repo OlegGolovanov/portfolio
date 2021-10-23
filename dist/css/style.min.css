@@ -970,7 +970,7 @@ progress {
 }
 
 .topmenu {
-  padding: 100px 0 100px 0;
+  padding: 200px 0 200px 0;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
@@ -979,7 +979,7 @@ progress {
   list-style: none;
 }
 
-.mouse .submenu {
+.submenu {
   transition: 1s all;
   position: absolute;
   list-style: none;
@@ -987,11 +987,20 @@ progress {
   transform-origin: 0 0;
 }
 
-.mouse ul li:hover .submenu {
-  opacity: 1;
-  transform: scaleY(1);
+.sub-submenu {
+  transition: 1s all;
+  position: absolute;
+  list-style: none;
+  transform: scaleY(0);
+  transform-origin: 0 0;
 }
 
-.mobile .submenu {
-  display: none;
+.triangle {
+  margin-left: 30px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 15px solid #79849B;
 }
