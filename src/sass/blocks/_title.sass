@@ -1,5 +1,6 @@
 .title
     font-family: Poppins
+    font-style: normal
     font-weight: 700
     position: relative
     z-index: 1
@@ -40,6 +41,7 @@
         text-align: center
         font-size: 36px
         line-height: 60px
+        position: static
         @include line
         &::after
             position: relative
@@ -59,3 +61,17 @@
         &::before
             top: 0px
             left: 0px
+    &_results
+        margin-top: 66px
+    &_results-h3
+        font-family: Poppins
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 21px
+        position: static
+        &:before
+            top: auto
+            left: 0
+            width: 15px
+            height: 15px

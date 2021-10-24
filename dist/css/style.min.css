@@ -1,4 +1,4 @@
-* {
+html {
   font-family: "Poppins", sans-serif;
 }
 
@@ -393,21 +393,23 @@ progress {
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../../fonts/Poppins-Medium.eot");
-  src: url("../../fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/Poppins-Medium.woff") format("woff"), url("../../fonts/Poppins-Medium.ttf") format("truetype");
+  font-display: swap;
+  src: url("../fonts/Poppins-Medium.eot");
+  src: url("../fonts/Poppins-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Medium.woff") format("woff"), url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../../fonts/Poppins-Bold.eot");
-  src: url("../../fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Poppins-Bold.woff") format("woff"), url("../../fonts/Poppins-Bold.ttf") format("truetype");
+  font-display: swap;
+  src: url("../fonts/Poppins-Bold.eot");
+  src: url("../fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 .container {
   position: relative;
-  width: 1140px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -421,6 +423,7 @@ progress {
 
 .title {
   font-family: Poppins;
+  font-style: normal;
   font-weight: 700;
   position: relative;
   z-index: 1;
@@ -476,6 +479,7 @@ progress {
   text-align: center;
   font-size: 36px;
   line-height: 60px;
+  position: static;
 }
 .title_experience-h3::after {
   content: "";
@@ -504,6 +508,23 @@ progress {
 .title_work-h3::before {
   top: 0px;
   left: 0px;
+}
+.title_results {
+  margin-top: 66px;
+}
+.title_results-h3 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  position: static;
+}
+.title_results-h3:before {
+  top: auto;
+  left: 0;
+  width: 15px;
+  height: 15px;
 }
 
 .button {
@@ -670,6 +691,7 @@ progress {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 .social-link a {
   width: 20px;
@@ -792,7 +814,7 @@ progress {
 .experience-dsc {
   display: grid;
   padding-top: 60px;
-  grid-template-columns: 417px 417px;
+  grid-template-columns: repeat(auto-fit, 417px);
   grid-template-rows: auto;
   -moz-column-gap: 143px;
   column-gap: 143px;
@@ -958,6 +980,48 @@ progress {
   width: 100%;
   height: 100%;
 }
+.results__work {
+  transition: 0.6s all;
+  filter: grayscale(0.75);
+}
+.results__work:hover {
+  transform: scale(1.03);
+  filter: grayscale(0);
+}
+.results__prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 370px);
+  justify-content: space-between;
+  padding-top: 91px;
+}
+.results__price {
+  display: grid;
+  grid-template-rows: repeat(3, 44px);
+  row-gap: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+.results__elements {
+  display: grid;
+  rid-template-rows: repeat(2, 1fr);
+}
+.results__price-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.results__price-elm {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  justify-self: right;
+}
+.results__price-dsc {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
 
 [data-results-work="4"] {
   grid-column: 4/5;
@@ -967,4 +1031,12 @@ progress {
 [data-results-work="6"] {
   grid-column: 2/4;
   grid-row: 2/2;
+}
+
+.contacts {
+  padding: 120px 91px;
+}
+.contacts__wapper {
+  display: grid;
+  grid-template-columns: 400px 585px;
 }
