@@ -526,6 +526,42 @@ progress {
   width: 15px;
   height: 15px;
 }
+.title_contacts-h2 {
+  position: relative;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  left: 12px;
+}
+.title_contacts-h2::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: -8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background: #FFA501;
+  z-index: -1;
+}
+.title_contacts-h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
+}
+.title_contacts-h3::after {
+  content: "";
+  display: block;
+  background-color: #FFA501;
+  height: 3px;
+  width: 60px;
+}
+.title_contacts-h3-dsc {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+}
 
 .button {
   display: flex;
@@ -737,6 +773,25 @@ progress {
   width: 1px;
   height: 70px;
   background-color: #000;
+}
+.social-link_contacts {
+  margin-top: 20px;
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  width: 135px;
+  height: 30px;
+}
+.social-link_contacts a {
+  width: 30px;
+  height: 30px;
+}
+.social-link_contacts-dsc {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .about-me {
@@ -1039,4 +1094,27 @@ progress {
 .contacts__wapper {
   display: grid;
   grid-template-columns: 400px 585px;
+  -moz-column-gap: 68px;
+  column-gap: 68px;
+}
+.contacts__dsc {
+  display: grid;
+  grid-template-rows: 256px 293px;
+}
+.contacts__form {
+  display: grid;
+  grid-template-rows: 45px 190px 45px;
+  grid-template-columns: repeat(2, 280px);
+  row-gap: 30px;
+  -moz-column-gap: 25px;
+  column-gap: 25px;
+}
+.contacts__name {
+  width: 100%;
+}
+.contacts__email {
+  width: 100%;
+}
+.contacts__text {
+  grid-column: 1/3;
 }

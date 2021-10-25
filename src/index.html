@@ -474,16 +474,23 @@
             <div class="contacts__wapper">
                 <div class="contacts__img"><img src="img/Photo-1.jpg" alt=""></div>
                 <div class="contacts__dsc">
-                    <h2 class="contacts__title-h2">Контакты</h2>
-                    <h3 class="contacts__title-h3">Свяжитесь со мной</h3>
-                    <h3 class="contacts__title-h3-dsc">Любым удобным для вас способом:</h3>
-                    <div class="social-link social-link_menu">
-                        <a href="#"><img src="icons/Github-1.svg" alt="Github"></a>
-                        <a href="#"><img src="icons/Instagram-1.svg" alt="Instagram"></a>
-                        <a href="#"><img src="icons/Facebook-2.svg" alt="Facebook"></a>
+                    <div class="contacts__dsc-wapper">
+                        <h2 class="title_contacts-h2">Контакты</h2>
+                        <h3 class="title_contacts-h3">Свяжитесь со мной</h3>
+                        <h3 class="title_contacts-h3-dsc">Любым удобным для вас способом:</h3>
+                        <div class="social-link social-link_contacts">
+                            <a href="#"><img src="icons/Github-1.svg" alt="Github"></a>
+                            <a href="#"><img src="icons/Instagram-1.svg" alt="Instagram"></a>
+                            <a href="#"><img src="icons/Facebook-2.svg" alt="Facebook"></a>
+                        </div>
+                        <h3 class="social-link_contacts-dsc">Или оставьте ваши данные и я сама вам напишу:</h3>
                     </div>
-                    <h3 class="social-link_dsc"></h3>
-                    <form action=""></form>
+                    <form class="contacts__form" action="#">
+                        <input class="contacts__name" name="name" placeholder="Иван" type="text">
+                        <input class="contacts__email" name="email" type="email">
+                        <input class="contacts__text" name="text" placeholder="Иван" type="text">
+                        <input class="contacts__btn" type="submit" placeholder="">
+                    </form>
                 </div>
             </div>
         </div>
