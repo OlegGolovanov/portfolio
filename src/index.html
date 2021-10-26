@@ -486,10 +486,19 @@
                         <h3 class="social-link_contacts-dsc">Или оставьте ваши данные и я сама вам напишу:</h3>
                     </div>
                     <form class="contacts__form" action="#">
-                        <input class="contacts__name" name="name" placeholder="Иван" type="text">
-                        <input class="contacts__email" name="email" type="email">
-                        <input class="contacts__text" name="text" placeholder="Иван" type="text">
-                        <input class="contacts__btn" type="submit" placeholder="">
+                        <div class="contacts__name">
+                            <label for="contacts__name">Ваше имя</label>
+                            <input id="contacts__name" name="name" placeholder="Иван" type="text">
+                        </div>
+                        <div class="contacts__email">
+                            <label for="contacts__email">Ваш email</label>
+                            <input id="contacts__email" name="email" type="email">
+                        </div>
+                        <div class="contacts__text">
+                            <label for="contacts__text">Ваше сообщение</label>
+                            <input id="contacts__text" name="text" type="text">
+                        </div>
+                        <input id="contacts__btn" type="submit" value="Отправить сообщение">
                     </form>
                 </div>
             </div>
