@@ -54,6 +54,7 @@
 <body>
     <section class="promo">
         <div class="container">
+
             <h2 class="title title_disk title_promo-h2">
                 Меня зовут Олег Головкин
             </h2>
@@ -375,7 +376,7 @@
         </div>
     </section>
 
-    <saction class="results">
+    <section class="results">
         <div class="container">
             <h2 class="title title_disk title_experience-h2">
                 Портофолио
@@ -392,24 +393,122 @@
                 <div class="results__work" data-results-work="6"><img src="img/plans.jpg" alt=""></div>
             </div>
 
-            <h2 class="title title_disk title_experience-h2">
+            <h2 class="title title_disk title_experience-h2 title_results">
                 Портофолио
             </h2>
 
-            <nav class="drop-down">
-                <ul class="topmenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a>
-                        <ul class="submenu">
-                            <li><a href="">Item 1</a></li>
-                            <li><a href="">Item 2</a></li>
-                        </ul>
-                    </li>                    
-                </ul>
-            </nav>
+            <div class="results__prices">
+                <div class="results__price">
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">
+                                Landing-page
+                            </h3>
+                            <div class="results__price-elm">
+                                от 8000 руб.
+                            </div>
+                        </div>
+                        <div class="results__price-dsc">Одностраничный сайт для презентации услуг/товаров/...
+                        </div>
+                    </div>
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">Корпоративный сайт
+                            </h3>
+                            <div class="results__price-elm">от 20000 руб.
+                            </div>
+                        </div>
+                        <div class="results__price-dsc">Сайт для вашего бизнеса или компании
+                        </div>
+                    </div>
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">Интернет-магазин
+                            </h3>
+                            <div class="results__price-elm">от 30000 руб.
+                            </div>
+                        </div>
+                        <div class="results__price-dsc">Инструмент для ваших продаж в сети
+                        </div>
+                    </div>
+                </div>
 
-            
-    </saction>
+                <div class="results__price">
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">
+                                Web-приложение
+                            </h3>
+                            <div class="results__price-elm">
+                                от 28000 руб.
+                            </div>
+                        </div>
+                        <div class="results__price-dsc">Приложение внутри браузера для лучшего комфорта</div>
+                    </div>
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">Android/IOS Приложение</h3>
+                            <div class="results__price-elm">от 25000 руб.</div>
+                        </div>
+                        <div class="results__price-dsc">Приложение для смартфона любой ОС</div>
+                    </div>
+                    <div class="results__elements">
+                        <div class="results__price-item">
+                            <h3 class="title title_disk title_results-h3">Дизайн</h3>
+                            <div class="results__price-elm">Индивидуально</div>
+                        </div>
+                        <div class="results__price-dsc">Создам дизайн для вашего сайта/приложения...</div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+    </section>
+
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__wapper">
+                <div class="contacts__img"><img src="img/Photo-1.jpg" alt=""></div>
+                <div class="contacts__dsc">
+                    <div class="contacts__dsc-wapper">
+                        <h2 class="title_contacts-h2">Контакты</h2>
+                        <h3 class="title_contacts-h3">Свяжитесь со мной</h3>
+                        <h3 class="title_contacts-h3-dsc">Любым удобным для вас способом:</h3>
+                        <div class="social-link social-link_contacts">
+                            <a href="#"><img src="icons/Github-1.svg" alt="Github"></a>
+                            <a href="#"><img src="icons/Instagram-1.svg" alt="Instagram"></a>
+                            <a href="#"><img src="icons/Facebook-2.svg" alt="Facebook"></a>
+                        </div>
+                        <h3 class="social-link_contacts-dsc">Или оставьте ваши данные и я сама вам напишу:</h3>
+                    </div>
+                    <form class="contacts__form" action="#">
+                        <div>
+                            <label for="contacts__name">Ваше имя</label>
+                            <input id="contacts__name" name="name" placeholder="Иван" type="text">
+                            <div class="contacts__name-attention">Не корректное имя</div>
+                        </div>
+                        <div>
+                            <label for="contacts__email">Ваш email</label>
+                            <input id="contacts__email" name="email" type="email">
+                            <div class="contacts__email-attention">Не корректный email</div>
+                            
+                        </div>
+                        <div class="contacts__text">
+                            <label for="contacts__text">Ваше сообщение</label>
+                            <input id="contacts__text" name="text" type="text">
+                        </div>
+                        <input id="contacts__btn" type="submit" value="Отправить сообщение">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 

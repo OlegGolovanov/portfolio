@@ -1,5 +1,6 @@
 .title
     font-family: Poppins
+    font-style: normal
     font-weight: 700
     position: relative
     z-index: 1
@@ -40,6 +41,7 @@
         text-align: center
         font-size: 36px
         line-height: 60px
+        position: static
         @include line
         &::after
             position: relative
@@ -59,3 +61,35 @@
         &::before
             top: 0px
             left: 0px
+    &_results
+        margin-top: 66px
+    &_results-h3
+        font-family: Poppins
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 21px
+        position: static
+        &:before
+            top: auto
+            left: 0
+            width: 15px
+            height: 15px
+    &_contacts-h2
+        position: relative
+        font-weight: 700
+        font-size: 16px
+        line-height: 24px
+        left: 12px
+        @include disk
+    &_contacts-h3
+        font-weight: 700
+        font-size: 36px
+        line-height: 60px
+        @include line
+    &_contacts-h3-dsc
+        margin-top: 20px
+        font-weight: 700
+        font-size: 14px
+        line-height: 21px
+
