@@ -68,9 +68,9 @@ form.forEach(function (item, i) {
 const contactsNameAttention = document.querySelector(".contacts__name-attention"),
     contactsForm = document.querySelector(".contacts__form"),
     inputContacts = contactsForm.querySelectorAll("input"),
-    contactsName = document.querySelector(".contacts__name"),
+    contactsName = document.querySelector("#contacts__name"),
     contactsEmailAttention = document.querySelector(".contacts__email-attention"),
-    contactsEmail = document.querySelector(".ontacts__email-attention"),
+    contactsEmail = document.querySelector("#ontacts__email"),
     regularUser = /^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/,
     regularEmail = /^[^@]+@[^@.]+\.[^@]+$/;
 
@@ -78,14 +78,13 @@ let validateName,
     validateEmail,
     validateInputValue;
 
-console.log(inputContacts);
 
 inputContacts.forEach(input => {
-    if (!input.classList.contains("contacts__btn")) {
+    if (!input.matches("#contacts__btn") &&
+        !input.matches(".contacts__checkbox")) {
         if (input.value == "") {
             input.addEventListener('blur', () => {
                 validateInput(input);
-                console.log(input);
             });
         }
     }
@@ -117,12 +116,17 @@ const validateInput = (input) => {
 contactsForm.addEventListener('submit', (e) => {
     e.preventDefault();
     inputContacts.forEach((input) => {
-        if (!input.classList.contains("contacts__btn")) {
-            if (input.value == "") {
+        if (!input.matches("#contacts__btn") &&
+            !input.matches(".contacts__checkbox")) {
+                
+            if (input.value == "") {    
+                console.dir(input);                           
                 contactsNameAttention.style.cssText = "display: block";
+                contactsEmailAttention.style.cssText = "display: block";
                 validateInputValue = false;
-            } else {
+            } else {                
                 contactsNameAttention.style.cssText = "display: none";
+                contactsEmailAttention.style.cssText = "display: none";
                 validateInputValue = true;
             }
         }
@@ -131,10 +135,15 @@ contactsForm.addEventListener('submit', (e) => {
     if (validateName &&
         validateEmail &&
         validateInputValue) {
-        function dataSend() {
-            alert("Данные отправлены");
+        if (contactsForm.querySelector(".contacts__checkbox").checked) {
+            function dataSend() {
+                alert("Данные отправлены");
+            }
+            dataSend();
+            contactsForm.reset();
+        } else {
+            alert("Согласитесь с условиями");
         }
-        dataSend();
-        contactsForm.reset();
     }
+
 });
