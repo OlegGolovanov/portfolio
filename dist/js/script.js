@@ -66,17 +66,23 @@ form.forEach(function (item, i) {
 // ------------------- Валидация имени и email в блоке contacts-------//
 
 const contactsNameAttention = document.querySelector(".contacts__name-attention"),
+    contactsEmailAttention = document.querySelector(".contacts__email-attention"),
     contactsForm = document.querySelector(".contacts__form"),
     inputContacts = contactsForm.querySelectorAll("input"),
     contactsName = document.querySelector("#contacts__name"),
-    contactsEmailAttention = document.querySelector(".contacts__email-attention"),
-    contactsEmail = document.querySelector("#ontacts__email"),
+    contactsText = document.querySelector("#contacts__text"),
+    contactsEmail = document.querySelector("#contacts__email"),
     regularUser = /^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/,
-    regularEmail = /^[^@]+@[^@.]+\.[^@]+$/;
+    regularEmail = /^[^@]+@[^@.]+\.[^@]+$/,
+    regularProbel = /^\s*$/;
 
 let validateName,
     validateEmail,
+    validateText,
     validateInputValue;
+
+
+
 
 
 inputContacts.forEach(input => {
@@ -91,23 +97,48 @@ inputContacts.forEach(input => {
 });
 
 const validateInput = (input) => {
+
     if (input.name == "name") {
         if (!regularUser.test(input.value) && input.value != '') {
-            contactsNameAttention.style.cssText = "display: block";
+            contactsName.nextElementSibling.textContent = "Не корректное ФИО";
             validateName = false;
         } else {
-            contactsNameAttention.style.cssText = "display: none";
+            contactsName.nextElementSibling.textContent = "";
+            validateName = true;
+        }
+
+        if (input.value.length == 0) {
+            contactsName.nextElementSibling.textContent = "Поле не заполнено";
+            validateName = false;
+        } else {
             validateName = true;
         }
     }
 
     if (input.name == "email") {
         if (!regularEmail.test(input.value) && input.value != '') {
-            contactsEmailAttention.style.cssText = "display: block";
+            contactsEmail.nextElementSibling.textContent = "Не корректный email";
             validateEmail = false;
         } else {
-            contactsEmailAttention.style.cssText = "display: none";
+            contactsEmail.nextElementSibling.textContent = "";
             validateEmail = true;
+        }
+
+        if (input.value.length == 0) {
+            contactsEmail.nextElementSibling.textContent = "Поле не заполнено";
+            validateEmail = false;
+        } else {
+            validateEmail = true;
+        }
+    }
+
+    if (input.name == "text") {
+        if (input.value == "") {
+            contactsText.nextElementSibling.textContent = "Поле не заполнено";
+            validateText = false;
+        } else {
+            contactsText.nextElementSibling.textContent = "";
+            validateText = true;
         }
     }
 }
@@ -115,26 +146,23 @@ const validateInput = (input) => {
 
 contactsForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    inputContacts.forEach((input) => {
-        if (!input.matches("#contacts__btn") &&
-            !input.matches(".contacts__checkbox")) {
-                
-            if (input.value == "") {    
-                console.dir(input);                           
-                contactsNameAttention.style.cssText = "display: block";
-                contactsEmailAttention.style.cssText = "display: block";
-                validateInputValue = false;
-            } else {                
-                contactsNameAttention.style.cssText = "display: none";
-                contactsEmailAttention.style.cssText = "display: none";
-                validateInputValue = true;
-            }
+    function fillingInput(selector, validate) {
+        if (selector.value == "") {
+            selector.nextElementSibling.textContent = "Поле не заполнено";
+            validate = false;
+        } else {
+            selector.nextElementSibling.textContent = "";
+            validate = true;
         }
-    });
+        console.log(validate)
+    }
+    fillingInput(contactsName, validateName);
+    fillingInput(contactsEmail, validateEmail);
+    fillingInput(contactsText, validateText);
 
     if (validateName &&
         validateEmail &&
-        validateInputValue) {
+        validateText) {
         if (contactsForm.querySelector(".contacts__checkbox").checked) {
             function dataSend() {
                 alert("Данные отправлены");
