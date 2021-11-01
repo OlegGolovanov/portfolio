@@ -1,3 +1,7 @@
+@media (max-width: 1342px)
+    .social-link_promo
+        display: none
+
 @media (max-width: 1200px)
     .container
         max-width: 960px
@@ -7,10 +11,57 @@
         font-size: 41px
         line-height: 50px
         width: 400px
+    .title
+        &_about-me
+            font-size: 36px
+        &_about-me-skill
+            font-size: 12px
+            line-height: 21px
+        &_about-me1
+            margin-top: 9px
+            line-height: 24px
+    .about-me
+        &__container
+            grid-template-columns: 400px 518px
+            column-gap: 40px
+        &__skills
+            grid-template-columns: 220px 220px
+            gap: 0 70px
+        &__skill
+            grid-template-columns: 40px 1fr
 
 @media (max-width: 992px)
     .container
         max-width: 720px
+    .about-me
+        padding-top: 40px
+        &__text
+            margin-top: 35px
+        &__container
+            grid-template-columns: 1fr
+            grid-template-rows: 600px auto auto
+            column-gap: 40px
+        &__img
+            grid-row: unset
+            justify-self: center
+            img
+                object-fit: cover
+                width: 400px
+                height: 600px
+        &__skills
+            margin-top: 20px
+            grid-template-columns: 1fr 1fr
+            gap: 20px 0
+        &__skill
+            grid-template-columns: 40px 1fr
+    .title
+        &_about-me
+            font-size: 36px
+            margin-top: 26px
+        &_about-me1
+            margin-left: 16px
+            margin-top: 46px
+            line-height: 24px
 
 @media (max-width: 767px)
     .container
@@ -39,3 +90,13 @@
             width: 250px
     .button_modifire
         max-width: 259px
+    .about-me
+
+        &__skills
+            margin-top: 20px
+            grid-template-columns: 1fr
+            gap: 20px 0
+            
+        &__skill
+            justify-self: center
+            grid-template-columns: 40px 200px

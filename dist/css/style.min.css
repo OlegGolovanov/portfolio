@@ -802,7 +802,7 @@ progress {
 }
 .about-me__container {
   display: grid;
-  grid-template-columns: 400px 670px;
+  grid-template-columns: 400px 570px;
   grid-template-rows: minmax(245px, auto) minmax(255px, auto);
   -moz-column-gap: 70px;
   column-gap: 70px;
@@ -1161,6 +1161,11 @@ progress {
   border: none;
 }
 
+@media (max-width: 1342px) {
+  .social-link_promo {
+    display: none;
+  }
+}
 @media (max-width: 1200px) {
   .container {
     max-width: 960px;
@@ -1175,10 +1180,76 @@ progress {
     line-height: 50px;
     width: 400px;
   }
+
+  .title_about-me {
+    font-size: 36px;
+  }
+  .title_about-me-skill {
+    font-size: 12px;
+    line-height: 21px;
+  }
+  .title_about-me1 {
+    margin-top: 9px;
+    line-height: 24px;
+  }
+
+  .about-me__container {
+    grid-template-columns: 400px 518px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
+  .about-me__skills {
+    grid-template-columns: 220px 220px;
+    gap: 0 70px;
+  }
+  .about-me__skill {
+    grid-template-columns: 40px 1fr;
+  }
 }
 @media (max-width: 992px) {
   .container {
     max-width: 720px;
+  }
+
+  .about-me {
+    padding-top: 40px;
+  }
+  .about-me__text {
+    margin-top: 35px;
+  }
+  .about-me__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 600px auto auto;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
+  .about-me__img {
+    grid-row: unset;
+    justify-self: center;
+  }
+  .about-me__img img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 400px;
+    height: 600px;
+  }
+  .about-me__skills {
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 0;
+  }
+  .about-me__skill {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .title_about-me {
+    font-size: 36px;
+    margin-top: 26px;
+  }
+  .title_about-me1 {
+    margin-left: 16px;
+    margin-top: 46px;
+    line-height: 24px;
   }
 }
 @media (max-width: 767px) {
@@ -1218,5 +1289,15 @@ progress {
 
   .button_modifire {
     max-width: 259px;
+  }
+
+  .about-me__skills {
+    margin-top: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px 0;
+  }
+  .about-me__skill {
+    justify-self: center;
+    grid-template-columns: 40px 200px;
   }
 }
