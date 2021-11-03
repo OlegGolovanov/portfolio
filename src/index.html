@@ -106,11 +106,20 @@
     <section class="about-me">
         <div class="container">
             <div class="about-me__container">
-                <div class="about-me__img"><img srcset="img/Photo-min.jpg 300w,
-                                                        img/Photo-1.jpg 400w" 
-                                                sizes="(max-width: 575px) 280px,
-                                                        (min-width: 577px) 400px" 
-                                                src="img/Photo-1.jpg" alt="Photo">
+                <div class="about-me__img">
+                    <!-- <picture>
+                        <source
+                        srcset="img/Photo-min.jpg 300w,
+                                img/Photo.jpg 400w" 
+                         sizes="(max-width: 500px) 290px,
+                                (min-width: 501px) 390px">
+                        <img src="img/Photo.jpg" alt="Photo">
+                    </picture> -->
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="img/Photo-min.jpg">
+                        <source media="(min-width: 768px)" srcset="img/Photo.jpg">
+                        <img src="img/Photo.jpg" alt="Photo">
+                    </picture>
 
                 </div>
                 <div class="about-me__dsc">
