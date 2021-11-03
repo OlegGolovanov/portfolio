@@ -103,10 +103,16 @@
 
     </section>
 
-  <section class="about-me">
+    <section class="about-me">
         <div class="container">
             <div class="about-me__container">
-                <div class="about-me__img"><img src="img/Photo-1.jpg" alt="Photo"></div>
+                <div class="about-me__img"><img srcset="img/Photo-min.jpg 300w,
+                                                        img/Photo-1.jpg 400w" 
+                                                sizes="(max-width: 575px) 280px,
+                                                        (min-width: 577px) 400px" 
+                                                src="img/Photo-1.jpg" alt="Photo">
+
+                </div>
                 <div class="about-me__dsc">
                     <h2 class="title title_disk title_fz16 title_about-me1">Про меня</h2>
                     <h3 class="title title_about-me">Меня зовут Олег</h3>
