@@ -29,6 +29,8 @@
             gap: 0 70px
         &__skill
             grid-template-columns: 40px 1fr
+    .experience-dsc
+        column-gap: 20px
 
 @media (max-width: 992px)
     .container
@@ -63,6 +65,17 @@
             margin-top: 46px
             line-height: 24px
 
+    .experience-dsc
+        row-gap: 40px
+        justify-content: center
+        padding-top: 40px
+        &__column
+            row-gap: 0px
+        &__item
+            margin-top: 10px
+            &_m-t45px
+                margin-top: 45px
+
 @media (max-width: 767px)
     .container
         max-width: 540px
@@ -74,10 +87,11 @@
     .container
         width: 100%
         padding: 0 25px
-    .title_promo-h1
-        font-size: 32px
-        line-height: 34px
-        width: 317px
+    .title
+        &_promo-h1
+            font-size: 32px
+            line-height: 34px
+            width: 317px
 
     .promo
         background: url(../img/Background.jpg) no-repeat 57%/cover
@@ -96,7 +110,7 @@
             margin-top: 20px
             grid-template-columns: 1fr
             gap: 20px 0
-            
+
         &__skill
             justify-self: center
             grid-template-columns: 40px 200px

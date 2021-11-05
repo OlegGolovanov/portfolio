@@ -59,7 +59,7 @@ h1 {
   }
 }
 h2 {
-  font-size: calc(1.325rem + .9vw);
+  font-size: calc(1.325rem + 0.9vw);
 }
 
 @media (min-width: 1200px) {
@@ -68,7 +68,7 @@ h2 {
   }
 }
 h3 {
-  font-size: calc(1.3rem + .6vw);
+  font-size: calc(1.3rem + 0.6vw);
 }
 
 @media (min-width: 1200px) {
@@ -77,7 +77,7 @@ h3 {
   }
 }
 h4 {
-  font-size: calc(1.275rem + .3vw);
+  font-size: calc(1.275rem + 0.3vw);
 }
 
 @media (min-width: 1200px) {
@@ -324,7 +324,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 0.5rem;
-  font-size: calc(1.275rem + .3vw);
+  font-size: calc(1.275rem + 0.3vw);
   line-height: inherit;
 }
 
@@ -466,14 +466,18 @@ progress {
   line-height: 24px;
 }
 .title_experience-h2 {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
   font-size: 16px;
   line-height: 24px;
-  text-align: center;
 }
 .title_experience-h2::before {
-  left: 48.4%;
-  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -4px;
 }
 .title_experience-h3 {
   text-align: center;
@@ -1202,6 +1206,11 @@ progress {
   .about-me__skill {
     grid-template-columns: 40px 1fr;
   }
+
+  .experience-dsc {
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
 }
 @media (max-width: 992px) {
   .container {
@@ -1247,6 +1256,21 @@ progress {
     margin-left: 16px;
     margin-top: 46px;
     line-height: 24px;
+  }
+
+  .experience-dsc {
+    row-gap: 40px;
+    justify-content: center;
+    padding-top: 40px;
+  }
+  .experience-dsc__column {
+    row-gap: 0px;
+  }
+  .experience-dsc__item {
+    margin-top: 10px;
+  }
+  .experience-dsc__item_m-t45px {
+    margin-top: 45px;
   }
 }
 @media (max-width: 767px) {
