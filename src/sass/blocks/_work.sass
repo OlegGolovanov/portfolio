@@ -2,9 +2,12 @@
     padding-top: 126px
     &__technologies
         display: grid
-        grid-template: repeat(2, minmax(270px, auto)) / repeat(4, minmax(270px, auto))
+        grid-template-columns: repeat(auto-fit, 270px)
+        grid-template-rows: repeat(2, minmax(270px, auto))
         gap: 13px 10px
     &__technology
+        border: 1px solid black
+        
         padding: 30px 29px 25px 30px
     &__title-technology
         margin-top: 20px
@@ -18,7 +21,8 @@
         line-height: 18px
     &__levels
         display: grid
-        grid-template: repeat(2, 70px) / repeat(3, 350px)
+        grid-template-rows: repeat(2, 70px) 
+        grid-template-columns: repeat(auto-fit, 350px)
         gap: 45px 38px
         padding-top: 120px
     &__levels-wapper
@@ -48,5 +52,3 @@
         height: 14px
         background-color: $main_color
         border-radius: 4px
-
-        

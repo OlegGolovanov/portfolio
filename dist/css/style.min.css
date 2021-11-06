@@ -443,7 +443,7 @@ progress {
   font-size: 16px;
 }
 .title_promo-h1 {
-  width: 532px;
+  max-width: 532px;
   font-size: 48px;
   line-height: 60px;
 }
@@ -907,7 +907,7 @@ progress {
 }
 .experience-dsc__wapper {
   display: grid;
-  grid-template-columns: 36px 236px;
+  grid-template-columns: 36px auto;
   -moz-column-gap: 18px;
   column-gap: 18px;
   position: relative;
@@ -967,10 +967,12 @@ progress {
 }
 .work__technologies {
   display: grid;
-  grid-template: repeat(2, minmax(270px, auto))/repeat(4, minmax(270px, auto));
+  grid-template-columns: repeat(auto-fit, 270px);
+  grid-template-rows: repeat(2, minmax(270px, auto));
   gap: 13px 10px;
 }
 .work__technology {
+  border: 1px solid black;
   padding: 30px 29px 25px 30px;
 }
 .work__title-technology {
@@ -987,7 +989,8 @@ progress {
 }
 .work__levels {
   display: grid;
-  grid-template: repeat(2, 70px)/repeat(3, 350px);
+  grid-template-rows: repeat(2, 70px);
+  grid-template-columns: repeat(auto-fit, 350px);
   gap: 45px 38px;
   padding-top: 120px;
 }
@@ -1029,7 +1032,8 @@ progress {
 }
 .results__works {
   display: grid;
-  grid-template: repeat(2, 280px)/repeat(4, 280px);
+  grid-template-rows: repeat(2, 280px);
+  grid-template-columns: repeat(auto-fit, 280px);
   gap: 5px 5px;
 }
 .results__works img {
@@ -1211,10 +1215,18 @@ progress {
     -moz-column-gap: 20px;
     column-gap: 20px;
   }
+
+  .work__technologies {
+    justify-content: space-between;
+  }
+  .work__levels {
+    justify-content: space-between;
+  }
 }
 @media (max-width: 992px) {
   .container {
     max-width: 720px;
+    padding: 0 20px;
   }
 
   .about-me {
@@ -1236,8 +1248,8 @@ progress {
   .about-me__img img {
     -o-object-fit: cover;
     object-fit: cover;
-    width: 400px;
-    height: 600px;
+    max-width: 100%;
+    height: 100%;
   }
   .about-me__skills {
     margin-top: 20px;
@@ -1272,15 +1284,31 @@ progress {
   .experience-dsc__item_m-t45px {
     margin-top: 45px;
   }
+
+  .work__levels {
+    justify-content: center;
+  }
 }
 @media (max-width: 767px) {
   .container {
     max-width: 540px;
+    padding: 0 20px;
   }
 
   .title_promo-h1 {
     font-size: 35px;
     line-height: 44px;
+  }
+
+  .work__technologies {
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  .about-me__container {
+    grid-template-columns: 1fr;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
   }
 }
 @media (max-width: 576px) {
@@ -1290,9 +1318,9 @@ progress {
   }
 
   .title_promo-h1 {
-    font-size: 32px;
+    font-size: 25px;
     line-height: 34px;
-    width: 317px;
+    max-width: 288px;
   }
 
   .promo {
@@ -1320,5 +1348,16 @@ progress {
   .about-me__skill {
     justify-self: center;
     grid-template-columns: 40px 200px;
+  }
+
+  .work__technologies {
+    justify-content: center;
+  }
+  .work__levels {
+    grid-template-columns: repeat(auto-fit, 250px);
+  }
+
+  .experience-dsc {
+    grid-template-columns: 1fr;
   }
 }

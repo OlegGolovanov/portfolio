@@ -31,10 +31,16 @@
             grid-template-columns: 40px 1fr
     .experience-dsc
         column-gap: 20px
+    .work
+        &__technologies
+            justify-content: space-between
+        &__levels
+            justify-content: space-between
 
 @media (max-width: 992px)
     .container
         max-width: 720px
+        padding: 0 20px
     .about-me
         padding-top: 40px
         &__text
@@ -48,8 +54,8 @@
             justify-self: center
             img
                 object-fit: cover
-                width: 400px
-                height: 600px
+                max-width: 100%
+                height: 100%
         &__skills
             margin-top: 20px
             grid-template-columns: 1fr 1fr
@@ -75,13 +81,25 @@
             margin-top: 10px
             &_m-t45px
                 margin-top: 45px
+    .work
+        &__levels
+            justify-content: center
 
 @media (max-width: 767px)
     .container
         max-width: 540px
+        padding: 0 20px
     .title_promo-h1
         font-size: 35px
         line-height: 44px
+    .work
+        &__technologies
+            justify-content: center
+            row-gap: 20px
+    .about-me
+        &__container
+            grid-template-columns: 1fr
+            column-gap: 40px
 
 @media (max-width: 576px)
     .container
@@ -89,10 +107,9 @@
         padding: 0 25px
     .title
         &_promo-h1
-            font-size: 32px
+            font-size: 25px
             line-height: 34px
-            width: 317px
-
+            max-width: 288px
     .promo
         background: url(../img/Background.jpg) no-repeat 57%/cover
 
@@ -105,12 +122,18 @@
     .button_modifire
         max-width: 259px
     .about-me
-
         &__skills
             margin-top: 20px
             grid-template-columns: 1fr
             gap: 20px 0
-
         &__skill
             justify-self: center
             grid-template-columns: 40px 200px
+
+    .work
+        &__technologies
+            justify-content: center
+        &__levels
+            grid-template-columns: repeat(auto-fit, 250px)
+    .experience-dsc
+        grid-template-columns: 1fr
