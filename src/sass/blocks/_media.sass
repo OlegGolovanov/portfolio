@@ -120,7 +120,7 @@
             display: none
         &__wapper
             justify-content: center
-            grid-template-columns: 1fr
+            grid-template-columns: auto
 
 @media (max-width: 767px)
     .container
@@ -141,6 +141,10 @@
         &__prices
             justify-content: center
             grid-template-columns: minmax(auto, 370px)
+            row-gap: 15px
+    .contacts
+        &__wapper
+            justify-content: center
 
 @media (max-width: 576px)
     .container
@@ -181,4 +185,9 @@
     .results
         &__elements
             grid-template-rows: repeat(2, 44px)
-            
+    .contacts
+        &__form
+            grid-template-columns: unset
+            grid-template-rows: auto
+        &__text
+            grid-column: unset

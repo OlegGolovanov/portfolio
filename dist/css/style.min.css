@@ -524,6 +524,7 @@ progress {
   font-size: 14px;
   line-height: 21px;
   position: static;
+  max-width: 153px;
 }
 .title_results-h3:before {
   top: auto;
@@ -1065,12 +1066,16 @@ progress {
   position: relative;
 }
 .results__elements {
-  display: grid;
-  rid-template-rows: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.results__elements:first-child {
+  margin-top: 0;
 }
 .results__price-item {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
 }
 .results__price-elm {
   font-weight: 700;
@@ -1079,6 +1084,7 @@ progress {
   justify-self: right;
 }
 .results__price-dsc {
+  margin-top: 5px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -1346,7 +1352,7 @@ progress {
   }
   .contacts__wapper {
     justify-content: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
   }
 }
 @media (max-width: 767px) {
@@ -1374,6 +1380,11 @@ progress {
   .results__prices {
     justify-content: center;
     grid-template-columns: minmax(auto, 370px);
+    row-gap: 15px;
+  }
+
+  .contacts__wapper {
+    justify-content: center;
   }
 }
 @media (max-width: 576px) {
@@ -1428,5 +1439,13 @@ progress {
 
   .results__elements {
     grid-template-rows: repeat(2, 44px);
+  }
+
+  .contacts__form {
+    grid-template-columns: unset;
+    grid-template-rows: auto;
+  }
+  .contacts__text {
+    grid-column: unset;
   }
 }
