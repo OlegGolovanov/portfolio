@@ -4,7 +4,7 @@
 
 @media (max-width: 1200px)
     .container
-        max-width: 960px
+        max-width: 1140px
     .social-link_promo
         display: none
     .title_promo-h1
@@ -33,11 +33,14 @@
         column-gap: 20px
     .work
         &__technologies
+            padding-top: 20px
             justify-content: space-between
         &__levels
+            padding-top: 20px
             grid-auto-rows: 70px
             justify-content: space-around
     .results
+        padding-top: 47px
         &__works
             justify-content: space-around
             grid-auto-rows: 280px
@@ -66,10 +69,8 @@
             height: 600px
 
 @media (max-width: 992px)
-
     .container
-        max-width: 720px
-        padding: 0 20px
+        max-width: 960px
     .about-me
         padding-top: 40px
         &__text
@@ -125,7 +126,6 @@
 @media (max-width: 767px)
     .container
         max-width: 540px
-        padding: 0 20px
     .title_promo-h1
         font-size: 35px
         line-height: 44px
@@ -186,8 +186,19 @@
         &__elements
             grid-template-rows: repeat(2, 44px)
     .contacts
+        &__dsc
+            grid-template-rows: auto auto
+            row-gap: 29px
+
         &__form
-            grid-template-columns: unset
-            grid-template-rows: auto
+            grid-template-columns: auto
+            grid-template-rows: 45px 45px 190px auto auto
+            column-gap: 0
+            row-gap: 29px
         &__text
             grid-column: unset
+        &__checkbox-wapper
+            justify-self: center
+    #contacts__btn
+        justify-self: center
+        grid-row: 5/6
