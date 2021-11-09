@@ -81,10 +81,6 @@ let validateName,
     validateText,
     validateInputValue;
 
-
-
-
-
 inputContacts.forEach(input => {
     if (!input.matches("#contacts__btn") &&
         !input.matches(".contacts__checkbox")) {
